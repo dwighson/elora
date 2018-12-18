@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container containertop">
-      <div class="row domesticwrap">
+      <div class="row domesticwrap" id="Domestic-cleaning">
         <div class="col-8 containertxt">
           <h1>DOMESTIC CLEANING</h1>
           <hr>
@@ -20,14 +20,14 @@
       </div>
     </div>
     <div class="wrapper">
-      <div class="testimonials">
+      <div class="testimonials" id="Testimonials">
         <h1>TESTIMONIALS</h1>
         <p>Reviews and ratings for our work</p>
         <Slider></Slider>
       </div>
     </div>
     <div class="container">
-      <div class="row tenancy">
+      <div class="row tenancy" id="End-of-tenancy-cleaning">
         <div class="col-8 tenancywrap">
           <h1>END OF TENANCY CLEANING</h1>
           <hr>

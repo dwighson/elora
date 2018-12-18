@@ -1,5 +1,5 @@
 <template>
-  <div class="row contactwrap">
+  <div class="row contactwrap" id="Contact">
     <h1>Contact us</h1>
     <hr>
     <p>Contact us for appointment or more information</p>
@@ -8,7 +8,7 @@
         <input type="text" placeholder="Name">
         <input type="text" placeholder="Company Name">
         <input type="text" placeholder="E-mail">
-        <textarea name id placeholder="message"></textarea>
+        <textarea name id placeholder="this form is not available yet."></textarea>
         <button>
           <Sendicon></Sendicon>
         </button>
@@ -19,21 +19,21 @@
             <div class="icon">
               <img src="~assets/locationicon.svg" alt> 
             </div>
-            <p>text</p>
+            <p>Anchor House New Road, Suite 3, DY2 9AF ENGLAND</p>
           </li>
           <li>
             <div class="icon">
               <img src="~assets/phoneicon.svg" alt>
             </div>
-            <p>text</p>
+            <p>+447305358726</p>
           </li>
           <li>
             <div class="icon">
               <img src="~assets/emailicon.svg" alt>
             </div>
-            <p>text</p>
+            <p>elora.serviceslimited@gmail.com</p>
           </li>
-          <li>
+          <!-- <li>
             <div class="icon">
               <img src="~assets/facebookicon.svg" alt>
             </div>
@@ -44,7 +44,7 @@
               <img src="~assets/instagramicon.svg" alt>
             </div>
             <p>text</p>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -63,12 +63,18 @@ export default {
 <style scoped>
 .contactwrap {
   text-align: center;
-  padding-top: 200px;
+  padding-top: 100px;
+}
+h1 {
+  font-size: 60px;
 }
 .contactwrap hr {
   margin: 0 auto;
   margin-bottom: 50px;
   width: 300px;
+  height: 8px;
+  background: #4169e1;
+  border: none;
 }
 .icon {
   height: 50px;
@@ -86,7 +92,6 @@ export default {
   text-align: left;
   flex: 1;
   height: 500px;
-  background: green;
 }
 .contact {
   height: 500px;
@@ -106,7 +111,14 @@ button {
   transform: translateX(-50%);
 }
 li {
+  /* background: purple; */
+  margin: 10px;
+  height: 50px;
   display: flex;
+}
+li p {
+  line-height: 50px;
+
 }
 input {
   height: 40px;
@@ -135,6 +147,9 @@ textarea {
   min-height: 200px;
   border-left: 2px solid #4169e1;
   border-right: 2px solid #4169e1;
+}
+.center {
+  padding-top: 100px;
 }
 @media only screen and (max-width: 1200px) {
   .center {

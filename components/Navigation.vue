@@ -6,16 +6,21 @@
     <p class="logo">Elora Services LTD</p>
 
     <ul class="mobilehide">
-      <li>Domestic cleaning</li>
-      <li>End of tenancy cleaning</li>
-      <li>Testimonials</li>
+      <li>
+        <a href="#Domestic-cleaning">Domestic cleaning</a>
+      </li>
+      <li>
+        <a href="#End-of-tenancy-cleaning">End of tenancy cleaning</a>
+      </li>
+      <li>
+        <a href="#Testimonials">Testimonials</a>
+      </li>
       <li class="phonenumber">
         <div class="phonei"></div>
-        <p>
-        +31640504261
-
-        </p>
-        <button>Contact</button>
+        <p>+447305358726</p>
+        <a href="#Contact">
+          <button>Contact</button>
+        </a>
       </li>
     </ul>
     <div v-bind:class="{'shade': menutoggle == true}" v-on:click="togglemenu"></div>
@@ -23,6 +28,7 @@
       <button v-on:click="togglemenu">
         <img src="~assets/hamburgericon.svg" alt>
       </button>
+
       <ul class="mobileshow">
         <li>Domestic cleaning</li>
         <li>End of tenancy cleaning</li>
@@ -42,6 +48,18 @@ export default {
     togglemenu: function() {
       this.menutoggle = !this.menutoggle;
     }
+  },
+  mounted() {
+    $(document).on("click", 'a[href^="#"]', function(event) {
+      event.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: $($.attr(this, "href")).offset().top
+        },
+        500
+      );
+    });
   }
 };
 </script>
@@ -64,6 +82,9 @@ nav {
   width: 80px;
   background: url("~assets/Phoneicon.svg") no-repeat center center;
   /* background-size: contain; */
+}
+a{
+  text-decoration: none;
 }
 button {
   visibility: hidden;
@@ -198,8 +219,7 @@ ul {
 }
 @media only screen and (max-width: 450px) {
   .logo {
-    font-size: 21px;;
+    font-size: 21px;
   }
-
 }
 </style>
