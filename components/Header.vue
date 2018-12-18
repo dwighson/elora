@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="shade"></div>
+    <!-- <div class="shade"></div> -->
     <div class="headertxt">
       <h1>We offer cleaning and hygienic services to individuals or companies, promoting a healthy living/work environment.</h1>
       <p>Our company uses Eco-friendly cleaning product but also respect our client's products preference. Our services are tailored to the client's needs.</p>
@@ -43,6 +43,7 @@ export default {
 }
 .headertxt {
   max-width: 1281px;
+  text-shadow: 0px 0px 10px rgba(0,0,0, .5);
   margin: 0 auto;
   width: calc(100% - 100px);
   flex: 1;
