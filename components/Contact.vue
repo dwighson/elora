@@ -17,6 +17,7 @@
         <ul>
           <li>
             <div class="icon">
+              
               <img src="~assets/locationicon.svg" alt> 
             </div>
             <p>text</p>
