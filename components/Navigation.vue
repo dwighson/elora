@@ -9,6 +9,14 @@
       <li>Domestic cleaning</li>
       <li>End of tenancy cleaning</li>
       <li>Testimonials</li>
+      <li class="phonenumber">
+        <div class="phonei"></div>
+        <p>
+        +31640504261
+
+        </p>
+        <button>Contact</button>
+      </li>
     </ul>
     <div v-bind:class="{'shade': menutoggle == true}" v-on:click="togglemenu"></div>
     <div v-bind:class="{'mobilenav': true, 'show': menutoggle == true}">
@@ -27,7 +35,7 @@
 export default {
   data() {
     return {
-      menutoggle: true
+      menutoggle: false
     };
   },
   methods: {
@@ -47,8 +55,15 @@ nav {
   z-index: 999;
   position: fixed;
   top: 0;
+  transition: all 0.5s ease;
   left: 0;
   background: #ffffff;
+}
+.phonei {
+  height: 80px;
+  width: 80px;
+  background: url("~assets/Phoneicon.svg") no-repeat center center;
+  /* background-size: contain; */
 }
 button {
   visibility: hidden;
@@ -86,7 +101,7 @@ ul {
   text-align: center;
   float: left;
   font-weight: bold;
-  width: 200px;
+  min-width: 200px;
   height: 100%;
 }
 .mobileshow {
@@ -96,26 +111,60 @@ ul {
   /* display: none; */
   visibility: hidden;
 }
-@media only screen and (max-width: 1200px) {
+
+.phonenumber {
+  position: absolute;
+  margin: 0;
+  flex-direction: row;
+  text-align: center;
+  right: 20px;
+
+  width: 400px;
+}
+.phonenumber .phonei {
+  float: left;
+  display: block;
+}
+.phonenumber button {
+  float: left;
+  visibility: visible;
+  height: 50px;
+  font-weight: bolder;
+  font-size: 20px;
+  width: 150px;
+  background: #4169e1;
+  margin: 15px;
+  border-radius: 5px;
+  color: white;
+}
+.phonenumber p {
+  float: left;
+
+  line-height: 80px;
+  font-weight: 400;
+}
+@media only screen and (max-width: 1500px) {
   .logo {
     margin: 0px 20px 0px 20px;
   }
+
   button {
     visibility: visible;
   }
   .mobilenav {
     visibility: visible;
-    transform: translateX(-70vw);
+    transform: translateX(-80vw);
     background: white;
     position: fixed;
     top: 0px;
     left: 0px;
     height: 100vh;
-    width: 70vw;
-    transition: all .3s ease-in-out;
-
+    text-align: left;
+    width: 80vw;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
   }
-  .mobileshow{
+  .mobileshow {
     padding: 0;
     width: 100%;
     margin: 0;
@@ -131,7 +180,7 @@ ul {
     /* display: block; */
 
     transform: translateX(0vw);
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   }
   .shade {
@@ -139,10 +188,18 @@ ul {
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, 0.5);
-    transition: all .5s ease;
+    transition: all 0.5s ease;
+  }
+  .shade.show {
   }
   .mobilehide {
     display: none;
   }
+}
+@media only screen and (max-width: 450px) {
+  .logo {
+    font-size: 21px;;
+  }
+
 }
 </style>

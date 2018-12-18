@@ -18,7 +18,7 @@ module.exports = {
       // { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'},
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'}
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' }
 
     ],
     script: [
@@ -50,8 +50,17 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    [
+      'storyblok-nuxt', 
+      { 
+        accessToken: 
+          process.env.NODE_ENV == 'production'
+          ?'LoEh1rBr2XTqXP9tVvtGwwtt'
+          :'IGNnQXBa2xwHC35TY9c2tQtt', 
+        cacheProvider: 'memory' 
+    }]
   ],
-
+  router: { base: '/elora/' },
   /*
   ** Build configuration
   */
@@ -63,13 +72,4 @@ module.exports = {
 
     }
   }
-}
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/<repository-name>/'
-  }
-} : {}
-
-export default {
-  ...routerBase
 }

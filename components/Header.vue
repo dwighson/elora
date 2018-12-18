@@ -5,7 +5,9 @@
       <h1>We offer cleaning and hygienic services to individuals or companies, promoting a healthy living/work environment.</h1>
       <p>Our company uses Eco-friendly cleaning product but also respect our client's products preference. Our services are tailored to the client's needs.</p>
       <button>Contact us!</button>
-      <div class="down"><div class="arrowdown"></div></div>
+      <div class="down">
+        <div class="arrowdown"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -18,7 +20,8 @@ export default {
 <style scoped>
 .header {
   /* overflow: hidden; */
-  background: url('https://cdn.discordapp.com/attachments/365915252161904651/521380105407299584/neonbrand-263851-unsplash.jpg') no-repeat center center fixed;
+  background: url("https://cdn.discordapp.com/attachments/365915252161904651/521380105407299584/neonbrand-263851-unsplash.jpg")
+    no-repeat center center fixed;
   background-size: cover;
   box-sizing: border-box;
   height: 100vh;
@@ -29,8 +32,8 @@ export default {
   padding-top: 200px;
 }
 .shade {
-  background: linear-gradient(90deg, #4169E1, rgba(0,0,0, 0));
-  opacity: .6;
+  background: linear-gradient(90deg, #4169e1, rgba(0, 0, 0, 0));
+  opacity: 0.6;
   height: 100%;
   width: 100%;
   top: 0;
@@ -67,9 +70,8 @@ p {
 }
 button {
   width: 270px;
-  color: #4169E1;
+  color: #4169e1;
   height: 50px;
-  margin: 20px;
   background: white;
   border-radius: 5px;
   font-weight: bolder;
@@ -89,18 +91,23 @@ button {
 .arrowdown {
   height: 20px;
   width: 20px;
-  border-bottom: 8px solid #4169E1;
-  border-right: 8px solid #4169E1;
+  border-bottom: 8px solid #4169e1;
+  border-right: 8px solid #4169e1;
   transform: rotate(45deg);
   margin: 0 auto;
   margin-top: 13px;
 }
-@media only screen and (max-width: 1200px) {
-  .headertxt h1 {
-    font-size: 40px;
+@media only screen and (max-width: 1500px) {
+  .headertxt {
     padding: 20px;
-    text-align: center;
-    line-height: 45px;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .headertxt h1 {
+    font-size: 60px;
+    padding: 20px;
+    /* text-align: center; */
+    line-height: 62px;
     margin-bottom: 10px;
   }
   .headertxt p {
@@ -109,11 +116,55 @@ button {
     line-height: 25px;
   }
   button {
-
+    margin: 20px;
+    /* display: block;
+    margin: 0 auto; */
   }
   .header {
-    text-align: center;
+    /* text-align: center; */
     padding-top: 100px;
   }
+}
+@media only screen and (max-width: 800px) {
+  .headertxt  h1{
+    line-height:54px;
+    font-size: 50px;
+  } 
+}
+@media only screen and (max-width: 630px) {
+  .headertxt  h1{
+    line-height:44px;
+    font-size: 40px;
+  } 
+}
+@media only screen and (max-width: 450px) {
+  .headertxt h1 {
+    font-size: 30px;
+    padding: 15px;
+    padding-bottom: 5px;
+    /* text-align: center; */
+    line-height: 33px;
+    margin-bottom: 0px;
+  }
+  .header {
+    padding-top: 70px;
+  }
+  .headertxt p {
+    font-size: 20px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0;
+    line-height: 25px;
+  }
+  .down {
+  bottom: 30px;
+  display: none;
+
+  }
+}
+@media only screen and (max-width: 450px) {
+
+
 }
 </style>

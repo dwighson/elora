@@ -123,7 +123,7 @@ h1 {
 }
 .slider {
   height: 600px;
-  /* overflow: hidden; */
+  overflow: hidden;
   max-width: 1400px;
   width: 100%;
   left: 50%;
@@ -155,7 +155,7 @@ h1 {
 
 @media only screen and (max-width: 1200px) {
   .card {
-    box-shadow: none;
+    /* box-shadow: none; */
   }
 }
 </style>

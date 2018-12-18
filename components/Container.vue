@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container containertop">
       <div class="row domesticwrap">
         <div class="col-8 containertxt">
           <h1>DOMESTIC CLEANING</h1>
@@ -8,8 +8,11 @@
           <p>We pride ourselves as an eco-friendly company and all our cleaners are employed by us and therefore protected by employment rights.</p>
           <p>We will have your home cleaned daily/weekly/fortnightly/monthly by our cleaning team to our clients, whatever your budget or expectations we will be able to cater and tailor our services to your needs.</p>
           <p>All our operatives are trained to our very high standards along with having excellent references and up to date DBS Checks.</p>
-
-          <button>Read more</button>
+          <div class="readmore" v-show="readmoretoggle">
+            <p>All our prices include supply of all cleaning products (however, we honour our clients cleaning products) and all our cleaners are equipped with a high-power and effective cleaning tools and equipment, the only thing we don't provide is a mop and bucket, this is due to risk of cross contamination in different customers’ homes.</p>
+            <p>We can have a look around your property and offer you a free no obligation quote.</p>
+          </div>
+          <button v-on:click="togglereadmore" v-if="readmoretoggle == false">Read more</button>
         </div>
         <div class="col-3 containerimg">
           <Cleaningimg></Cleaningimg>
@@ -36,20 +39,9 @@
           <Popupblocks></Popupblocks>
         </div>
       </div>
-      <div class="row contactwrap">
-        <h1>Contact us</h1>
-        <hr>
-        <p>Contact us for appointment or more information</p>
-        <div class="col-4">
-        <Contact></Contact>
-
-        </div>
-        <div class="col-4">
-        <div class="info"></div>
-      </div>
-      </div>
-      
+      <Contact></Contact>
     </div>
+    <footer></footer>
   </div>
 </template>
 <script>
@@ -66,6 +58,17 @@ export default {
     Contact,
     Slider,
     Popupblocks
+  },
+  data() {
+    return {
+      readmoretoggle: false
+    }
+  },
+  methods: {
+    togglereadmore: function() {
+      alert("??")
+      this.readmoretoggle =! this.readmoretoggle
+    }
   }
 };
 </script>
@@ -88,19 +91,19 @@ Cleaningimg {
   width: 100%;
   height: 300px;
 }
-.domesticwrap{
+.containertxt {
+  /* padding-bottom: 100px; */
+}
+.domesticwrap {
   padding-top: 100px;
   min-height: 700px;
 }
 .tenancy {
   padding-top: 100px;
 }
-.contactwrap {
-  text-align: center;
-}
-.contactwrap .col-4{
-  display: inline-block;
-  float: none;
+.readmore {
+  min-height: 400px;
+  transition: all .5s ease;
 }
 .testimonials {
   width: 100%;
@@ -115,16 +118,19 @@ Cleaningimg {
   color: white;
   text-align: center;
 }
-
 hr {
   width: 125px;
-  height: 10px;
+  height: 7px;
   margin-bottom: 30px;
   background: #4169e1;
 }
 .container {
   max-width: 1800px;
   /* z-index: 99999; */
+}
+.containertop {
+  position: relative;
+  z-index: 1;
 }
 h1 {
   font-size: 64px;
@@ -138,7 +144,7 @@ p {
 }
 button {
   height: 40px;
-  width: 125px;
+  width: 102px;
   background: #4169e1;
   color: white;
   border-radius: 7px;
@@ -149,6 +155,14 @@ button {
   .testimonials h1 {
     font-size: 50px;
     line-height: 50px;
+  }
+  .tenancy {
+    text-align: center;
+  }
+  .tenancywrap {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
   }
 }
 </style>
