@@ -50,16 +50,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-cname-module', { baseUrl: 'eloracleaning-mt.co.uk' }],
     [
-      ['nuxt-cname-module', { baseUrl: 'eloracleaning-mt.co.uk' }],
-      'storyblok-nuxt', 
-      { 
-        accessToken: 
+      'storyblok-nuxt',
+      {
+        accessToken:
           process.env.NODE_ENV == 'production'
-          ?'LoEh1rBr2XTqXP9tVvtGwwtt'
-          :'IGNnQXBa2xwHC35TY9c2tQtt', 
-        cacheProvider: 'memory' 
-    }]
+            ? 'LoEh1rBr2XTqXP9tVvtGwwtt'
+            : 'IGNnQXBa2xwHC35TY9c2tQtt',
+        cacheProvider: 'memory'
+      }]
   ],
   router: { base: '/elora/' },
   /*
