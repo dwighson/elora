@@ -61,7 +61,7 @@ module.exports = {
         cacheProvider: 'memory'
       }]
   ],
-  router: { base: '/elora/' },
+  // router: { base: '/elora/' },
   /*
   ** Build configuration
   */
