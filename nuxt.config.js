@@ -51,6 +51,7 @@ module.exports = {
   */
   modules: [
     [
+      ['nuxt-cname-module', { baseUrl: 'eloracleaning-mt.co.uk' }],
       'storyblok-nuxt', 
       { 
         accessToken: 
