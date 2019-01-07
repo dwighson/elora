@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container containertop">
-      <div class="row domesticwrap">
-        <div class="col-8 containertxt">
+      <div class="row domesticwrap" id="domesticCleaning">
+        <div class="col-8 containertxt" >
           <h1>DOMESTIC CLEANING</h1>
           <hr>
           <p>We pride ourselves as an eco-friendly company and all our cleaners are employed by us and therefore protected by employment rights.</p>
@@ -17,14 +17,14 @@
       </div>
     </div>
     <div class="wrapper">
-      <div class="testimonials">
+      <div class="testimonials" id="testimonials">
         <h1>TESTIMONIALS</h1>
         <p>Reviews and ratings for our work</p>
         <Slider></Slider>
       </div>
     </div>
     <div class="container">
-      <div class="row about">
+      <div class="row about" id="about">
         <div class="col-8 aboutwrap">
           <h1>ABOUT US</h1>
           <hr>
@@ -69,7 +69,7 @@
           <div class="img"></div>
         </div>
       </div>
-      <div class="row tenancy">
+      <div class="row tenancy" id="endOfTenancyCleaning">
         <div class="col-8 tenancywrap">
           <h1>END OF TENANCY CLEANING</h1>
           <hr>
@@ -82,7 +82,7 @@
         </div>
       </div>
 
-      <Contact></Contact>
+      <Contact id="contact"></Contact>
     </div>
     <footer></footer>
   </div>
@@ -150,8 +150,7 @@ Cleaningimg {
   height: 500px;
   max-width: 400px;
   width: 400px;
-  background: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b450fb4d-959e-4de5-a112-d27c1add3d61/rawpixel-777268-unsplash.jpg?AWSAccessKeyId=ASIAT73L2G45GU7VXGH2&Expires=1546882044&Signature=cdZvFmSc0a94FyQ60H5j4nc2FNQ%3D&x-amz-security-token=FQoGZXIvYXdzEPL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDIylNBXwPi4O6zXC9yK3A8h%2FGbWEQD5ZANHFAFKyaaRCBTj4lde78dksW8A7J6DVdFrUdFZdkvK6PjEFCl%2BANWaq6A8KNgPpaaUZRwwW%2BpfPrAJkZAjtNQEw2AMhkKdqzbb8u94M1SKiti8F2uq6DJ6hI1v4lobPJUO9JEa8zH7fC69LUJHN5VPes2IanAgY97nLhuLO237yO4egz%2FxgsslA6KtUzSaDOvIzb84qDQXXc6ZMpaIsbtT15KNvUuIrWaD%2FIpJw%2F5B7A%2FElhIzWKPW5wB2%2BtgtsOOrbWgZdWOSOnORqTixJhyIhzw%2F3xL6VJPb6ywHJpcBuM41uMqoSni33dAWuOoZeQ%2B%2BHgqDQJC%2FCzevs5au7NjIVUBIT3QURpWiMIUQjrcRV7hHUo%2FGfvV79nA97OkgZ3hoSCmfGpf6%2FsidnSGzy9PHWZDXtAJOdLRgmfDtwKft8%2B1Z1k%2FSaCQgmcgRf%2FbipuNG%2BtKJtX2qAY%2B1%2FPtRzsvBok%2B0TwLizmgLf%2FkCxC2bPCfSetBAdzNeAQHTR8acet1Cn4Jg4Y1V4%2FfjTtpVzgdzqUQwhSduiSS9jkWGqlsTvhNQPtRqCeW1zcR5FQvsons%2FI4QU%3D")
-    no-repeat center center;
+  background: url("~assets/elora.jpg") no-repeat center center;
   background-size: cover;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }

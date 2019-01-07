@@ -6,15 +6,23 @@
     <p class="logo">Elora Services LTD</p>
 
     <ul class="mobilehide">
-      <li>Domestic cleaning</li>
-      <li>End of tenancy cleaning</li>
-      <li>Testimonials</li>
-      <li class="phonenumber">
-        <div class="phonei"></div>
-        <p>
-        +31640504261
+      <li>
+        <a href="#about">about</a>
+      </li>
 
-        </p>
+      <li>
+        <a href="#domesticCleaning">Domestic cleaning</a>
+      </li>
+      <li>
+        <a href="#endOfTenancyCleaning">End of tenancy cleaning</a>
+      </li>
+      <li>
+        <a href="#testimonials">Testimonials</a>
+      </li>
+      <li class="phonenumber">
+        <!-- <div class="phonei"></div> -->
+        <!-- <p>+31640504261</p> -->
+        <a href="#contact"></a>
         <button>Contact</button>
       </li>
     </ul>
@@ -24,19 +32,74 @@
         <img src="~assets/hamburgericon.svg" alt>
       </button>
       <ul class="mobileshow">
-        <li>Domestic cleaning</li>
-        <li>End of tenancy cleaning</li>
-        <li>Testimonials</li>
+        <li v-on:click="togglemenu">
+          <a href="#about">about</a>
+        </li>
+        <li v-on:click="togglemenu">
+          <a href="#domesticCleaning">Domestic cleaning</a>
+        </li>
+        <li v-on:click="togglemenu">
+          <a href="#endOfTenancyCleaning">End of tenancy cleaning</a>
+        </li>
+        <li v-on:click="togglemenu">
+          <a href="#testimonials">Testimonials</a>
+        </li>
+        
       </ul>
     </div>
   </nav>
 </template>
 <script>
+import $ from "jquery";
 export default {
   data() {
     return {
       menutoggle: false
     };
+  },
+  mounted() {
+    $('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function(event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, "") ==
+            this.pathname.replace(/^\//, "") &&
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var target = $(this.hash);
+          target = target.length
+            ? target
+            : $("[name=" + this.hash.slice(1) + "]");
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $("html, body").animate(
+              {
+                scrollTop: target.offset().top
+              },
+              1000,
+              function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) {
+                  // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                }
+              }
+            );
+          }
+        }
+      });
   },
   methods: {
     togglemenu: function() {
@@ -101,8 +164,13 @@ ul {
   text-align: center;
   float: left;
   font-weight: bold;
-  min-width: 200px;
+  /* min-width: 200px; */
+  padding-left: 20px;
+  padding-right: 20px;
   height: 100%;
+}
+li a {
+  text-decoration: none;
 }
 .mobileshow {
   margin-top: 100px;
@@ -198,8 +266,7 @@ ul {
 }
 @media only screen and (max-width: 450px) {
   .logo {
-    font-size: 21px;;
+    font-size: 21px;
   }
-
 }
 </style>

@@ -12,13 +12,15 @@ export default {
   components: {
     Header,
     Container
-  },
-
+  }
 };
 </script>
 <style>
 .wrapper {
   width: 100vw;
+}
+* {
+  outline: none;
 }
 
 body{
