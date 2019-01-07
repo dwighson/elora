@@ -82,10 +82,7 @@ export default {
         !this.email == "" &&
         !this.msg == ""
       ) {
-        if (
-          this.email.indexOf("@") == true &&
-          this.email.indexOf("@") < this.email.indexOf(".")
-        ) {
+        if (this.email.indexOf("@") == true) {
           emailjs.send(service_id, template_id, template_params);
         } else {
           alert("make sure to fill in a correct email address.");
@@ -108,7 +105,7 @@ h1 {
 }
 hr {
   height: 8px;
-  width:  200px;
+  width: 200px;
   border: none;
   background: blue;
 }
